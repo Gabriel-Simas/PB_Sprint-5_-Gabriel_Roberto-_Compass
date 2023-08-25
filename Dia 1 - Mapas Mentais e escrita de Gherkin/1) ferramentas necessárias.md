@@ -10,6 +10,12 @@ Primeiro nós precisamos ter a ferramenta VS Code instalada em nossa máquina, u
             Fig 1: Cucumber (Gherkin) Full Support            Fig 2: Snippets and Syntax Highlight for Gherkin (Cucumber)
 
 
+### Website:
+
+O website sugerido para criar esse mapa mental inicial é o Advantage Online Shopping, ele é um site estilo e-commerce, portanto esse será o site utilizado nos exemplos e testes.
+
+**link para acesso**: https://www.advantageonlineshopping.com/#/
+
 💻 **VS Code**: O Visual Studio Code é um editor de código-fonte desenvolvido pela Microsoft para Windows, Linux e macOS. Ele inclui suporte para depuração, controle de versionamento Git incorporado, realce de sintaxe, complementação inteligente de código, snippets e refatoração de código.
 
 **link para download**: https://code.visualstudio.com/download
