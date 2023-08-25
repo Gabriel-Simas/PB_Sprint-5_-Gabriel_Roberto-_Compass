@@ -23,3 +23,13 @@ Este repositório foi estruturado para simplificar a navegação, portanto eu op
 - 🦗 **Capybara**: Capybara é uma biblioteca de automação de teste em Ruby frequentemente usada para testar aplicativos web. Ela fornece uma API para interagir com elementos da página, preenchendo formulários, clicando em botões e navegando entre páginas, simulando o comportamento do usuário real.
 
 - 🔍 **SitePrism**: SitePrism é uma gem (biblioteca) popular em Ruby para automatizar testes de interface de usuário. Ela ajuda a estruturar e organizar os testes ao mapear elementos da página em classes Ruby. Isso melhora a legibilidade e a manutenção dos testes automatizados.
+
+## 🛠️ Pré Requisitos
+
+- 💎 **Ruby**: Ruby é uma linguagem de programação dinâmica e de propósito geral. É conhecida por sua simplicidade e legibilidade. Muitos desenvolvedores a utilizam para construir aplicativos web, scripts e automatizar tarefas.
+
+- 💻 **VS Code**: O Visual Studio Code é um editor de código-fonte desenvolvido pela Microsoft para Windows, Linux e macOS. Ele inclui suporte para depuração, controle de versionamento Git incorporado, realce de sintaxe, complementação inteligente de código, snippets e refatoração de código.
+
+- 🐙 **Git**: Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo.
+
+- 😺 **GitHub**: GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.
