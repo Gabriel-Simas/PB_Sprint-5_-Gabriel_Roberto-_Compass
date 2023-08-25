@@ -6,15 +6,9 @@ Primeiramente seja muito bem-vindo(a), esse repositório está destinado a docum
 
 ## 🗂️ Organização do Repositório
 
-Este repositório foi estruturado para simplificar a navegação, portanto eu optei por dividir as pastas do repositório por tópicos, cada um dos tópicos representam uma porção do contéudo que venho aprendendo ao decorrer dessa sprint. Segue a baixo um sumário explicando de forma um pouco mais detalhada o que cada uma das pastas contém:
+Este repositório foi estruturado para simplificar a navegação, portanto eu optei por dividir as pastas do repositório conforme os dias da sprint, cada um dos dias representa uma porção do contéudo que venho aprendendo ao decorrer dessa sprint.
 
-- **/Análise com mapas mentais e escrita de Gherkin:** Nesta pasta, você encontrará mapas mentais e arquivos contendo exemplos de cenários escritos em Gherkin. Alguns mapas mentais podem incluir diagramas visuais para planejar a estrutura dos cenários de teste.
-- **/Mapeamento de elementos HTML:** Aqui, você encontrará arquivos contendo scripts ou documentos que detalham o mapeamento dos elementos HTML presentes nas páginas da web que serão testadas.
-- **/Automação de testes com Cucumber e Capybara:** Nesta pasta, há arquivos com cenários de teste escritos em Gherkin, bem como scripts de automação usando o Cucumber e o Capybara para executar esses cenários.
-- **/Configuração de ambientes dinâmicos:** Você encontrará scripts ou configurações que permitem criar ambientes de teste dinâmicos, como arquivos de configuração que alternam entre diferentes ambientes (desenvolvimento, teste, produção).
-- **/Padrão de projeto Page Objects com SitePrism:** Nesta pasta, você verá arquivos contendo classes Page Objects implementadas usando o padrão Page Objects e o SitePrism. Cada classe representará uma página ou componente da interface.
-- **/Massas de dados estáticas e dinâmicas:** Aqui, encontra-se arquivos com conjuntos de dados de teste, tanto estáticos (que não mudam) quanto dinâmicos (que podem ser gerados ou modificados dinamicamente durante a execução dos testes).
-- **/Diferentes tipos de reports da automação de testes:** Nesta pasta, você verá arquivos de relatórios gerados após a execução dos testes, incluindo relatórios de resultados, métricas de cobertura e outras informações relevantes.
+**Exemplo de Pasta**: Dia (n°) + (conteúdo abordado).
 
 ## 🛠️ Ferramentas Empregadas
 
