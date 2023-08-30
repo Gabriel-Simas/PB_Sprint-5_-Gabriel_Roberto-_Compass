@@ -124,3 +124,109 @@ require 'capybara/cucumber'
 
 ![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/1a9e112c-a280-41b7-8490-56adbf05121d)
 ___
+
+Ok, agora iremos configurar o nosso driver, vamos utilizar o seguinte driver:
+
+```ruby
+Capybara.default_driver = :selenium_chrome
+```
+
+Deve ficar dessa forma:
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/96139edb-f3ae-4eef-9831-8931ef6b508a)
+___
+
+Feito isso, agora nós iremos apertar com o botão direito do mouse e ir até o campo criar uma nova pasta, o nome dessa pasta será "specs".
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/fa8a26ae-f734-421c-be4f-b88f09aa7f3c)
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/16256b7f-02ec-45d0-b7a7-eaf60e254c9d)
+___
+
+Novamente utilizando o botão direito, desta vez nós iremos criar um arquivo, seu nome será "google" e a extensão ".feature".
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/ad8cce76-a2af-40ce-8871-094f2b13fba8)
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/fed33aca-972c-47e5-8ca3-41afe635b9e2)
+
+Agora que criamos o arquivo eu irei descrever o cenário em Gherkin, recomendo que caso tenha dúvidas quanto ao próximo passo, retorne e reveja os conteúdos dos módulos anteriores.
+
+O documento ficou da seguinte forma:
+
+```gherkin
+Feature: Google
+
+Scenario: Carregar a página do Google
+    Given que acesse a home
+    Then deverá exibir o logo da Google
+```
+
+Já descrevemos o nosso cenário, fica claro que a intenção é testar se o browser irá abrir, então vamos testar em nosso terminal.
+
+Para rodar nosso amiguinho em nosso terminal basta executar o seguinte comando:
+
+```powershell
+bundle exec cucumber
+```
+
+Ele me retornou o seguinte:
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/b3887f18-a906-471e-8002-7862d70a4935)
+___
+
+Parece que ocorreu um erro, mas isso já era esperado, nós ainda não colocamos nada de concreto, o programa precisa de uma série de etapas para poder executar esses testes, o gherkin sozinho não é capaz de faze-lo, portanto vamos explicar para o computador passo a passo o que ele deve fazer.
+
+O terminal inclusive nos orienta como nós podemos implementar esse processo.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/d3777b55-3fe7-4842-89b6-8ce8720e1dc7)
+___
+
+Então vamos em "steps_definitions", nós vamos criar um arquivo "google.rb", nele nós iremos colar o seguinte código.
+
+```ruby
+Given('que acesse a home') do
+    pending # Write code here that turns the phrase above into concrete actions
+end
+  
+Then('deverá exibir o logo da Google') do
+    pending # Write code here that turns the phrase above into concrete actions
+end
+```
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/c0a7f7fd-0f2d-4dff-a30f-1827cef98717)
+___
+
+Agora nós só precisamos preencher esses campos com os códigos que permitiram o programa executar os testes.
+
+No caso de acessar a página do Google, o capybara utiliza o `visit`, ficaria dessa forma.
+
+```ruby
+visit('https://www.google.com.br/')
+```
+
+Ficaria dessa forma:
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/26264b62-2019-4209-9b01-e2fa81a00dab)
+___
+
+Agora vamos testar novamente, `bundle exec cucumber`.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/ac9cf260-2fd8-4ee0-81d2-c38dbf54e2ab)
+___
+
+Como vocês podem ver agora ele funcionou, devemos agorar preencher o nosso segundo passo.
+
+Primeiro para isso você precisa Inspecionar a página do Google e descobrir o id ou a classe do logo da Google.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/a4e6dddb-c6c9-4046-b915-73513a40fc49)
+___
+
+Aqui é possível observar que a class do logo da Google é "lnXdpd".
+
+Agora cole código abaixo ele irá verificar alguns se encontra essa classe em meio ao css da página inicial do Google.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/1406fde0-95bc-4b51-9349-0e12eed1c76a)
+___
+
+Vamos executar, `bundle exec cucumber`.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/c6e1e230-3bea-4139-b9ad-96070ba28dfa)
+___
