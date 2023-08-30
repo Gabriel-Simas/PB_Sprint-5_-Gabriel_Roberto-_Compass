@@ -8,7 +8,7 @@ Então a primeira coisa que nós iremos fazer é começar a configurar o nosso p
 
 Você vai acessar o seu computador, ir até o disco c, lá você deve criar uma pasta chamada Projetos, dentro desta pasta você irá criar outra pasta chamada CapybaraCucumber.
 
-Dentro da pasta CapybaraCucumber você irá clicar com o botão direito de seu mouse e apertar em abrir o terminal.
+Dentro da pasta CapybaraCucumber você irá clicar com o botão direito de seu mouse e apertar em abrir o terminal, no meu caso eu utilizo o PowerShell, pois já tenho familiaridade, porém também recomendo o Cmder.
 ___
 ![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/26b7651f-a042-4f60-9baa-961962b738fb)
 ___
@@ -47,14 +47,80 @@ Agora que nós já temos uma melhor noção sobre o papel de cada gem, vamos ret
 Primeiro nós começamos com:
 
 ```ruby
-  source 'http://rubygems.org'
+source 'http://rubygems.org'
 ```
 
 Agora iremos declarar as demais gems:
 
 ```ruby
-  gem 'cucumber'
-  gem 'capybara'
-  gem 'selenium-webdriver', '~> 3.142'
-  gem 'rspec'
+gem 'cucumber'
+gem 'capybara'
+gem 'selenium-webdriver', '~> 3.142'
+gem 'rspec'
 ```
+
+Após isso nós salvamos o arquivo e em nosso terminal nós executamos o comando `bundle install`, esse comando irá instalar as depêndencias das gems para conseguirmos executar o projeto.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/a200ded2-545e-4c70-a26c-556706b72825)
+
+Após você pressionar enter ele irá começar a instalar as dependências, você verá o seguinte processo ocorrendo:
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/f0dc3d77-1135-4ec8-957c-12e41ea9acb2)
+
+
+Depois desse processo será gerado um arquivo "Gemfile.lock", significa que tudo correu bem, agora vamos partir para o cucumber.
+
+Para iniciar o cucumber utilize o comando:
+
+```powershell
+cucumber --init
+```
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/91d4ac42-dfa3-4adb-b066-5a9ddcb2b032)
+___
+
+Como a gente já instalou as gems o cucumber pode ser chamado dessa forma, mas caso não funcione utilize esse outro método:
+
+```powershell
+bundle exec cucumber --init
+```
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/c650d7f5-99e0-4a91-8edb-5bcef2efab6e)
+___
+
+Ele irá retornar algo como:
+
+```powershell
+create  features
+create  features/step_definitions
+create  features/support
+create  features/support/env.rb
+```
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/f5d7d96b-512f-4142-a369-f3ac5edabc0d)
+___
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/95d0ec45-49cd-48c3-9c90-15f7c384cacd)
+___
+
+Criados os arquivos, nós podemos ir lá no VS Code conferir tudo isso, agora a gente já tem uma estrutura base para criar os nosso primeiros testes, o "env.rb" é o nosso arquivo de configuração padrão, o que nós teremos que fazer, nós temos que dar um require em tudo o que iremos utilizar nesse projeto, não necessáriamente tudo, existem algumas exceções.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/5f726519-9046-4fd1-a72a-f9e08dfde03f)
+___
+
+Mas vamos logo pra ação, nós começamos com:
+
+```ruby
+require 'cucumber'
+require 'selenium-webdriver'
+require 'rspec'
+```
+
+Como dito anteriormente existem algumas exceções, no caso do capybara é informado em sua [página do GitHub](https://github.com/teamcapybara/capybara) que para se utilizar o capybara em conjunto com o cucumber deve se utilizar esse método:
+
+```ruby
+require 'capybara/cucumber'
+```
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/1a9e112c-a280-41b7-8490-56adbf05121d)
+___
