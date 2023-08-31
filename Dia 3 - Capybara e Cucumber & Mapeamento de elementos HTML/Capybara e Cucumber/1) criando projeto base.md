@@ -230,3 +230,84 @@ Vamos executar, `bundle exec cucumber`.
 
 ![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/c6e1e230-3bea-4139-b9ad-96070ba28dfa)
 ___
+
+Ok deu tudo certo, os nossos testes passaram, agora vamos inserir um novo cenário, dessa vez o programa deve buscar por Compass na pesquisa do Google.
+
+Vamos começar, partindo pro documento 'google.feature', nós iremos descrever como ocorrerá esse novo cenário:
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/71ba401a-4e35-4510-b69b-f864e701d106)
+___
+
+Ok, feito isso vamos executar `bundle exec cucumber` no terminal, para verificar se os testes estão corretos.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/ed5939db-28a3-4dfa-87c3-78e2f9a2e039)
+___
+
+Nessa mensagem ele explica que nós ainda não implementamos ações concretas nos campos `When` e `Then`, então vamos retornar ao arquivo 'google.rb'.
+
+Nós vamos copiar esse trecho da mensagem que o terminal nos deu:
+
+```ruby
+When('buscar por {string}') do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then('deverão ser encontrados resultados') do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+```
+
+Agora vamos colar logo abaixo dos demais códigos, deve ficar dessa forma.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/b85d5c89-4328-495e-b0d9-a6af332386af)
+___
+
+Agora vamos ir para a página do Google e inspecionar qual o nome do input da barra de pesquisa.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/24280808-97e3-4bbb-b76a-933c9b6dac51)
+___
+
+O nome do input da barra de pesquisa é `q`.
+
+Precisamos também da classe do botão de "Pesquisa Google".
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/e4289ccf-a141-46f5-b041-88cc69102f88)
+___
+
+Ok, inspecionando o elemento podemos ver que sua classe é "gNO89b".
+
+Agora já sabemos a classe dele vamos retornar ao nosso documento "google.rb" e adicionar essas informações.
+
+Nós podemos utilizar o `find` para buscar um elemento e o `click` para clicar em um elemento, dessa forma podemos interagir melhor com a página o conteúdo.
+
+Começando pelo `When` o nosso código ficaria assim:
+
+```ruby
+When('buscar por {string}') do |termo|
+    find("textarea[name='q']").set termo
+    find(".UUbT9 .gNO89b").click 
+  end
+```
+
+Eu realizei alguns testes e foi necessário adicionar a `class` do `jscontroller` para que os testes funcionem.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/f5b2d104-82ca-4daa-89e7-5c3997483616)
+___
+
+Agora o `When` está pronto, vamos partir para o `Then`. Vale ressaltar que sempre é interessante nós utilizarmos um objeto específico que nos permita saber se os testes correram bem, no nosso caso como queremos realizar uma pesquisa pelo termo "Compass", utilizamos como referência o "Jeep Compass", um modelo de carro que aparece logo no topo dos resultados, então acredito que esse será um bom referêncial.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/b350eeda-df14-4d42-8716-5aabdf9f7490)
+___
+
+```ruby
+Then('deverão ser encontrados resultados') do
+    expect(page).to have_content 'Jeep Compass'
+end
+```
+
+Agora vamos testar.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/40cd3cb4-3b16-4839-8d2c-9444e3e177ca)
+___
+
+Tudo certo, nos próximos módulos iremos dar prosseguimento ao conteúdo de Capybara e Cucumber.
