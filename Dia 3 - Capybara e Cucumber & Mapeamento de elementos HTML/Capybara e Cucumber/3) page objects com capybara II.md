@@ -136,7 +136,7 @@ class GoogleHome
     include Capybara::DSL
 
     def load
-        visit('https://www.google.com.br/')
+        visit('/')
     end
 
     def search_for(query)
@@ -146,4 +146,52 @@ class GoogleHome
 end
 ```
 
-Ok, agora nós mudaremos o nome da classe para `BasePage`, vamos apagar o `def search_for(query)` e deixar só o `def load`.
+Ok, agora nós mudaremos o nome da classe para `BasePage`, vamos apagar o `def search_for(query)`, deixar só o `def load` e incluir um `require 'capybara/dsl'`.
+
+```ruby
+require 'capybara/dsl'
+
+class BasePage
+    include Capybara::DSL
+
+    def load
+        visit('/')
+    end
+end
+```
+
+Agora vamos retornar ao "google_home.rb".
+
+```ruby
+class GoogleHome
+    include Capybara::DSL
+
+    def load
+        visit('/')
+    end
+
+    def search_for(query)
+        find("textarea[name='q']").set query
+        find(".UUbT9 .gNO89b").click
+    end
+end
+```
+
+Vamos modificar o "google_home.rb".
+
+```ruby
+class GoogleHome < BasePage
+
+    def search_for(query)
+        find("textarea[name='q']").set query
+        find(".UUbT9 .gNO89b").click
+    end
+end
+```
+
+Agora vamos realizar um teste:
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/8a5e91b6-4300-45c8-bb8d-eda40b99f52e)
+___
+
+Tudo certo por enquanto, no próximo módulo nós iremos ver inspeção de elementos html.
