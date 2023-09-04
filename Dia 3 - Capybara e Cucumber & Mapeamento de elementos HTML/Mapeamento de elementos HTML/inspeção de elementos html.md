@@ -4,7 +4,7 @@
 - São identificadores dos elementos ou componentes de uma página web ou mobile.
 - São utilizados como alvo das ações do usuário ou de um navegador automatizado.
 
-Então aqui mesmo nessa página nós podemos observar diversos elementos, nós podemos inspecionar esses elementos utilizando o atalho **Ctrl** + **Shift** + **I** ou você pode apertar com o botão direito do mouse e descer até a opção **Inspecionar**.
+Então aqui mesmo nessa página nós podemos observar diversos elementos, nós podemos inspecionar esses elementos utilizando o atalho (**Ctrl** + **Shift** + **I**) ou você pode apertar com o botão direito do mouse e descer até a opção **Inspecionar**.
 
 ![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/55a1441c-6f7b-4b2c-ad3a-1e1a9f05e601)
 ___
@@ -21,7 +21,7 @@ ___
 
 Essa ferramenta apresenta um maior proveito quando você já tem conhecimentos básicos sobre front-end.
 
-Ainda dentro da ferramenta nós podemos realizar a pesquisa de alguns elementos utilizando o atalho **Ctrl** + **F**, basta inserir o que se procura no campo de busca e pesquisar, isso é muito útil para verificar se o nome desse elemento é único, para evitar erros quando formos realizar os testes automatizados.
+Ainda dentro da ferramenta nós podemos realizar a pesquisa de alguns elementos utilizando o atalho (**Ctrl** + **F**), basta inserir o que se procura no campo de busca e pesquisar, isso é muito útil para verificar se o nome desse elemento é único, para evitar erros quando formos realizar os testes automatizados.
 
 ### SauceDemo para exemplos:
 
@@ -108,4 +108,14 @@ document.querySelector("#user-name")
 
 Essas opções ajudam os desenvolvedores web a depurar, estilizar e interagir com elementos específicos em uma página da web durante o desenvolvimento ou testes. Cada uma delas desempenha um papel diferente no acesso e manipulação de elementos da página.
 
-Mas para esses elementos na SauceDemo (05:47).
+Mas para esses elementos na SauceDemo os desenvolvedores da página criaram seletores costumizados e esses seletores costumizados normalmente começam com a palavra `data`, no caso do campo **username** nós temos `data-test="username"`.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/9f6666d4-b199-4c25-9c0f-23da90111ca8)
+___
+
+Nós podemos copiar esse seletor `data-test="username"` e utilizar o atalho (**Ctrl** + **F**), então eu vou abrir e fechar colchetes e colar o trecho `[data-test="username"]`.
+
+![image](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/77f2ed5b-92ae-4171-a7c4-b83a798c06e7)
+___
+
+Podemos ver que houve só um resultado, ou seja, ele é um elemento único.
