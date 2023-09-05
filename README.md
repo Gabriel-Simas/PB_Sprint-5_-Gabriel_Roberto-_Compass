@@ -24,7 +24,7 @@ Este repositório foi estruturado para simplificar a navegação, portanto eu op
 
 - 🔍 **SitePrism**: SitePrism é uma gem (biblioteca) popular em Ruby para automatizar testes de interface de usuário. Ela ajuda a estruturar e organizar os testes ao mapear elementos da página em classes Ruby. Isso melhora a legibilidade e a manutenção dos testes automatizados.
 
-## 🔍 Pré Requisitos
+## 🔗 Pré-Requisitos
 
 - 💎 **Ruby**: Ruby é uma linguagem de programação dinâmica e de propósito geral. É conhecida por sua simplicidade e legibilidade. Muitos desenvolvedores a utilizam para construir aplicativos web, scripts e automatizar tarefas.
 
