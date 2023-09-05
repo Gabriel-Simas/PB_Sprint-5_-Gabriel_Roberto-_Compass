@@ -1,4 +1,4 @@
-## 3) Criando a Primeira Feature
+## 4) Finalizando as Features
 
 Aqui nós damos prosseguimento ao conteúdo de Gherkin, basicamente iremos desenvolver um outro documento porém agora para a PDP (página do produto), baseado que nós já inserimos em nosso mapa mental inicial.
 
