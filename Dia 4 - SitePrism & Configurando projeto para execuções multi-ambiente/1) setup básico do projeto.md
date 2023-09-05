@@ -131,3 +131,72 @@ Then('deverá apresentar o logo da Google') do
 end
 ```
 
+Deixaremos ele dessa forma, vamos em **feature** nele nós iremos criar uma pasta **page_objects**, dentro dela criar um arquivo **home.rb**, nesse arquivo nós iremos colocar aquela barra que falta para a url lá no **env.rb** no `Capybara.app_host = 'https://www.google.com.br'`, dessa forma quando carregarmos essa página nós iremos carregar a página do google. Nós também iremos setar ele para herdar do `SitePrism::Page`.
+
+**home.rb**
+```ruby
+class Home < SitePrism::Page
+    set_url '/'
+
+end
+```
+
+Agora nós iremos usar um ferramenta do SitePrism que nos permite setar uma varivel que carregará as informações do nosso elemento, no nosso caso a gente quer verificar se a página carregou e se o logo do Google está visível, então nós iremos até a página de início do Google e inspecionar o logo para conseguirmos mais informações para nossa ferramenta de busca.
+
+![2](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/57ca9440-785a-4927-9155-ebe5521786d6)
+___
+
+Você pode observar na print que a `class` do nosso logo da Google é `lnXdpd`, agora só para garantir que não ajam outros elementos com a mesma classe nós realizaremos uma breve pesquisa, lembrando atalho (**Ctrl** + **F**).
+
+![2](https://github.com/Gabriel-Simas/PB_Sprint-5_-Gabriel_Roberto-_Compass/assets/128181261/f4bd3c7b-f45f-4456-8bd8-e1ad587867f8)
+___
+
+Ok, nós podemos observar que de fato só existe um elemento `img` com a `class="lnXdpd"`, nós iremos utilizar essas informações que colhemos na página inicial do Google em nossa ferramenta de busca do SitePrism.
+
+A ferramenta funciona assim `element :um_nome_que_inventamos_para_o_elemento, 'img[class="lnXdpd"]'`.
+
+Ficaria dessa forma.
+
+**home.rb**
+```ruby
+class Home < SitePrism::Page
+    set_url '/'
+
+    element :logo, 'img[class="lnXdpd"]'
+end
+```
+
+Retornando ao arquivo **google.rb** nós iremos preencher aquelas duas lacunas agora.
+
+Vamos nos atentar ao `Given` primeiramente, nele nós iremos chamar a `class Home` e definir um comando para carregá-la, consequentemente carregando a nossa página do Google também.
+
+```ruby
+Given('que esteja na home') do
+    @home_page = Home.new
+    @home_page.load
+end
+```
+
+Ok, agora iremos prosseguir para o `Then`, nele iremos realizar a verificação do nosso logo.
+
+```ruby
+Then('deverá apresentar o logo da Google') do
+    expect(@home_page).to have_logo
+end
+```
+
+O documento ficaria dessa forma:
+
+**google.rb**
+```ruby
+Given('que esteja na home') do
+    @home_page = Home.new
+    @home_page.load
+end
+  
+Then('deverá apresentar o logo da Google') do
+    expect(@home_page).to have_logo
+end
+```
+
+Executando `cucumber` no terminal, podemos constatar que os testes passarão.
